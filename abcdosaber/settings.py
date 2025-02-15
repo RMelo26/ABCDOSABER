@@ -39,9 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'tipodeatividade.apps.TipoDeAtividadeConfig',
     'titulos.apps.TitulosConfig',
-    'alunos.apps.alunosConfig',
-    'instrutor.apps.InstrutorConfig'
-    ''
+    'alunos.apps.AlunosConfig',
+    'instrutor.apps.InstrutorConfig',
+    'turmas.apps.TurmasConfig',
 ]
 
 MIDDLEWARE = [

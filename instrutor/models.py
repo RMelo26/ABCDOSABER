@@ -15,4 +15,4 @@ class Instrutor(models.Model):
     codigo_titulo = models.ForeignKey(Titulos, null=True, blank=True, on_delete=models.SET_NULL, db_column="titulo_codigo")
     
     def __str__(self):
-        return f'{self.codigo} - {self.descricao}'
+        return f'{self.id} - {self.nome}'
