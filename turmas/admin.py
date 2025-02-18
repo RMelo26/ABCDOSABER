@@ -1,9 +1,8 @@
 from django.contrib import admin
-from turmas.models import Turmas
-from turmas.models import TurmaAluno
-from turmas.models import Ausencia
+
+from turmas.models import Turma, TurmaAluno, Ausencia
 
 # Register your models here.
-admin.site.register(Turmas)
+admin.site.register(Turma)
 admin.site.register(TurmaAluno)
 admin.site.register(Ausencia)
