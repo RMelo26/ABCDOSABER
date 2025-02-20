@@ -3,7 +3,7 @@ from django.utils import timezone
 
 from tipodeatividade.models import TipoDeAtividade
 from instrutor.models import Instrutor
-from alunos.models import Aluno
+from alunos.models import Alunos
 
 
 # Create your models here.
@@ -14,7 +14,7 @@ class Turma(models.Model):
     data_inicial = models.DateField(default=timezone.now(), help_text="Informe a data inicial da Turma")    
     data_final = models.DateField(null=True, blank=True, help_text="Informe a data final da Turma")
     codigo_atividade = models.ForeignKey(TipoDeAtividade, on_delete=models.CASCADE)
-    matricula_monitor = models.ForeignKey(Aluno, null=True, blank=True, on_delete=models.SET_NULL)
+    matricula_monitor = models.ForeignKey(Alunos, null=True, blank=True, on_delete=models.SET_NULL)
     id_instrutor = models.ForeignKey(Instrutor, null=True, on_delete=models.CASCADE)
     
         
@@ -27,7 +27,7 @@ class Turma(models.Model):
 class TurmaAluno(models.Model):
     numero_turma =  models.ForeignKey(Turma, on_delete=models.CASCADE, 
                                       help_text="Número da turma do aluno.")       
-    matricula_aluno = models.ForeignKey(Aluno, on_delete=models.CASCADE,
+    matricula_aluno = models.ForeignKey(Alunos, on_delete=models.CASCADE,
                                         help_text="Matrícula do aluno da turma")
     data_inicio_matricula = models.DateField(null=False,
                                              default=timezone.now(),
@@ -42,7 +42,7 @@ class TurmaAluno(models.Model):
 class Ausencia(models.Model):
     numero_turma =  models.ForeignKey(Turma, on_delete=models.CASCADE, 
                                       help_text="Número da turma do aluno.")       
-    matricula_aluno = models.ForeignKey(Aluno, on_delete=models.CASCADE,
+    matricula_aluno = models.ForeignKey(Alunos, on_delete=models.CASCADE,
                                         help_text="Matrícula do aluno da turma")
     data_ausencia = models.DateField(null=False,
                                      default=timezone.now(),
