@@ -1,4 +1,4 @@
-# Projeto "abcdosaber_uc3"
+# Projeto "abcdosaber"
 
 Este é um projeto criado com o framework Django.
 Seu objetivo é fornecer aos alunos da unidade curricular correspondente, tutoria e apoio para o desenvolvimento das respectivas competências da unidade.
