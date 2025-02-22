@@ -1,14 +1,12 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from titulos.models import Titulos
 
 # Create your views here.
-def index(request):
-    return HttpResponse("<!DOCType html><html><body>olá eu estou no titulos</body></html>")
-
 def listar(request):
-    return HttpResponse("Lista de Tipos de Aividade")
-
-def show_mensagem(request):
-    x = "M"
-    nome = x + "Renan, tudo certo?"
-    return HttpResponse(f"Bom dia!{nome}")
+    lista_titulo = Titulos.objects.all()
+    contexto = {
+        'titulos' : lista_titulo 
+    }
+    
+    return render(request, 'tipodeatividade/listarTipoDeAtividade.html', context = contexto)
