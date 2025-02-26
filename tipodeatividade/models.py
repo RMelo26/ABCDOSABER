@@ -1,6 +1,7 @@
 from django.db import models
 from django.urls import reverse
 
+
 # Modelo representando um Tipo de Atividade
 class TipoDeAtividade(models.Model):
     """Modelo representando um Tipo de Atividade"""
