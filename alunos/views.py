@@ -1,6 +1,5 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-
 from alunos.models import Alunos
 
 # Create your views here.
